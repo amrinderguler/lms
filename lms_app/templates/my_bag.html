@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block main_content %}
+    <div class="container mt-4">
+        <h2>My Bag</h2>
+        <div class="row">
+            {% for Book in bags %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        {% if Book.book.image %}
+                            <img class="card-img-top" src="{{ Book.book.image.url }}" alt="{{ Book.book.title }}">
+                        {% else %}
+                            <p>No image available</p>
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ Book.book.title }}</h5>
+                            <p class="card-text">Author: {{ Book.book.author }}</p>
+                            <p class="card-text">Quantity: {{ Book.quantity }}</p>
+                            <a href="{% url 'remove_from_bag' Book.book.id %}" class="btn btn-primary">Remove from bag</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

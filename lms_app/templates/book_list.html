@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+
+{% block main_content %}
+    <div class="container mt-4">
+        <h2>Books</h2>
+        <div class="text-center">
+            <h4>Search Books</h4>
+        </div>
+        <div class="row justify-content-center">
+            <nav class="navbar bg-body-light">
+                <div class="container-fluid justify-content-center align-items-center">
+                    <form class="d-flex" role="search" method="get">
+                        <input class="form-control me-2" type="text" name="q" placeholder="Search books...">
+                        <input class="btn btn-outline-primary" type="submit" value="Search">
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div class="row">
+            {% for book in books %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        {% if book.image %}
+                            <img class="card-img-top" src="{{ book.image.url }}" alt="{{ book.title }}">
+                        {% else %}
+                            <p>No image available</p>
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ book.title }}</h5>
+                                <p class="card-text">BookID: {{ book.id}}</p>
+                            
+                            <p class="card-text">Author: {{ book.author }}</p>
+                            <p class="card-text">Publication Date: {{ book.publication_date }}</p>
+                            <p class="card-text">Quantity: {{ book.quantity }}</p>
+                            <a href="{% url 'add_to_bag' book.id %}" class="btn btn-primary">Add to bag</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

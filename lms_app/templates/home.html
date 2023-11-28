@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load static %}
+
+{% block main_content %}
+<main role="main">
+<div class="jumbotron">
+    <div class="container">
+        <img src="{% static '/Books.webp' %}" class="rounded float-start" alt="IMG" height="250" style="margin-right: 10px;">
+        <h1 class="display-4">Hello, Readers</h1>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. A deserunt excepturi possimus quia animi nam maiores pariatur libero dolores recusandae sequi totam atque reiciendis magnam, et, enim soluta doloribus cupiditate?</p>
+        <p><button type="button" class="btn btn-primary btn-lg">Browse our collection</button></p>
+    </div>
+</div>
+<div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <h2>Why Books are important?</h2>
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus tenetur commodi unde consequuntur, laboriosam quas similique modi cupiditate, officiis error amet porro, tempora provident quibusdam cum illo eaque vero? Neque.</p>
+
+      </div>
+      <div class="col">
+        <h2>Benefits</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nesciunt pariatur exercitationem ipsam voluptates dicta aspernatur necessitatibus quo molestiae. Omnis molestiae, ab dolores laboriosam est natus quaerat recusandae impedit tempora.</p>
+
+      </div>
+      <div class="col">
+        <h2>Vision & Mission</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta eius amet excepturi temporibus aspernatur, voluptatibus accusantium repellat et ad iste laudantium maiores voluptas totam laborum culpa cum non nihil delectus.</p>
+      </div>
+    </div>
+    <hr>
+  </div>
+</main>
+
+<footer class="container">
+    <p>Copyright @JECRC 2023</p>
+</footer>
+{% endblock %}
